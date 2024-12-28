@@ -1,0 +1,657 @@
+:root {
+    --wp--preset--color--black: #000000;
+    --wp--preset--color--cyan-bluish-gray: #abb8c3;
+    --wp--preset--color--white: #ffffff;
+    --wp--preset--color--pale-pink: #f78da7;
+    --wp--preset--color--vivid-red: #cf2e2e;
+    --wp--preset--color--luminous-vivid-orange: #ff6900;
+    --wp--preset--color--luminous-vivid-amber: #fcb900;
+    --wp--preset--color--light-green-cyan: #7bdcb5;
+    --wp--preset--color--vivid-green-cyan: #00d084;
+    --wp--preset--color--pale-cyan-blue: #8ed1fc;
+    --wp--preset--color--vivid-cyan-blue: #0693e3;
+    --wp--preset--color--vivid-purple: #9b51e0;
+    --wp--preset--color--dark-gray: #383f40;
+    --wp--preset--color--medium-gray: #656d6f;
+    --wp--preset--color--light-gray: #dddddd;
+    --wp--preset--color--accent-primary: #a27a25;
+    --wp--preset--color--accent-secondary: #D9E9E7;
+    --wp--preset--color--bg-dark: #121212;
+    --wp--preset--color--bg-light: #f4f4f4;
+  --wp--preset--font-size--small: clamp(0.875rem, 1vw, 0.9rem);
+  --wp--preset--font-size--medium: clamp(0.875rem, 1.2vw, 1.2rem);
+  --wp--preset--font-size--large: clamp(1.25rem, 3vw, 2rem);
+  --wp--preset--font-size--x-large: clamp(1.563rem, 4vw, 2.625rem);
+  --wp--preset--font-size--extra-small: 0.75rem;
+  --wp--preset--font-size--normal: clamp(0.875rem, 1vw, 1rem);
+  --wp--preset--font-size--medium-large: clamp(0.929rem, 1.5vw, 1.4rem);
+  --wp--preset--font-size--extra-large: clamp(1.743rem, 5vw, 3rem);
+  --wp--preset--font-size--huge: clamp(2.2rem, 6vw, 4rem);
+  --wp--preset--font-size--gigantic: clamp(2.629rem, 8vw, 5rem);
+  --wp--preset--font-size--humongous: clamp(3.426rem, 10vw, 7rem);
+
+    --wp--preset--font-family--roboto: Roboto, sans-serif;
+    --wp--preset--font-family--roboto-slab: 'Roboto Slab', serif;
+
+
+
+    --wp--style--global--content-size: 780px;
+    --wp--style--global--wide-size: 1366px;
+    --wp--preset--spacing--20: 0.44rem;
+    --wp--preset--spacing--30: 0.67rem;
+    --wp--preset--spacing--40: 1rem;
+    --wp--preset--spacing--50: 1.5rem;
+    --wp--preset--spacing--60: 2.25rem;
+    --wp--preset--spacing--70: 3.38rem;
+    --wp--preset--spacing--80: 5.06rem;
+    --wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);
+    --wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);
+    --wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);
+    --wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);
+    --wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);
+    --wp--custom--typography--line-height--small: 1.2;
+    --wp--custom--typography--line-height--medium: 1.4;
+    --wp--custom--typography--line-height--normal: 1.65;
+    --wp--custom--typography--line-height--large: 1.8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--wp--preset--font-family--primary);
+    line-height: var(--wp--custom--typography--line-height--normal);
+    color: var(--wp--preset--color--white);
+    margin: 0;
+    animation: fadein ease-in 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+.header {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: auto;
+}
+
+.header-container {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-section-one {
+    display: flex;
+    place-content: center space-between;
+    padding: .5rem;
+    background-color: #000000b7;
+}
+
+.header-section-one h1 {
+    display: flex;
+    gap: 1rem;
+    font-size: var(--wp--preset--font-size--x-small);
+    font-family: var(--wp--preset--font-family--roboto-slab);
+}
+
+.header-section-one h1 a {
+    color: var(--wp--preset--color--accent-primary);
+    text-decoration: underline;
+}
+
+.navbar-container {
+    flex-wrap: wrap;
+    padding: 1rem 2rem;
+}
+
+.navbar-unorder-list {
+    display: flex;
+    flex-wrap: wrap;
+    place-content: center space-between;
+    list-style: none;
+}
+
+.navbar-unorder-list .navbar-list,
+.navbar-home-link,
+.navbar-link {
+    display: flex;
+    gap: 2rem;
+    text-decoration: none;
+    color: var(--wp--preset--color--light-gray);
+    line-height: var(--wp--custom--typography--line-height--small);
+}
+
+.navbar-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    list-style: none;
+}
+
+.navbar-list-icons {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.navbar-list-icons,
+i {
+    text-decoration: none;
+    font-size: var(--wp--preset--font-size--medium-large);
+}
+
+.main-section-one {
+    display: flex;
+    background-image: url('./WATCHES/banner-05c-2048x1003.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    max-width: 100%;
+    flex-direction: column;
+    place-content: center center;
+}
+
+.mso-article {
+    display: block;
+    max-width: var(--wp--style--global--content-size);
+    padding-top: 36px;
+    padding-right: 36px;
+    padding-bottom: 36px;
+    padding-left: 36px;
+}
+@media screen and (max-width: 768px) {
+  .mso-article {
+    text-align: center;
+  }
+}
+
+.mso-title {
+    font-family: var(--wp--preset--font-family--roboto-slab);
+    font-size: clamp(7rem, 5vw, 10rem);
+    /* Responsive font size from 1rem to 7rem */
+    line-height: var(--wp--custom--typography--line-height--small);
+    font-weight: 300;
+    /* Light font weight for a subtle look */
+    letter-spacing: .2rem;
+    /* Adds space between letters */
+}
+
+.mso-article p {
+    font-family: var(--wp--preset--font-family--roboto);
+    font-size: var(--wp--preset--font-size--extra-small);
+    line-height: var(--wp--custom--typography--line-height--large);
+    font-weight: 300;
+    max-width: 100%;
+    letter-spacing: .2rem;
+}
+
+.mso-article button {
+    font-family: var(--wp--preset--font-family--roboto);
+    font-size: var(--wp--preset--font-size--extra-small);
+    line-height: var(--wp--custom--typography--line-height--medium);
+    font-weight: 300;
+    letter-spacing: .2rem;
+    padding: 1rem;
+    background-color: transparent;
+    border: solid 1px var(--wp--preset--color--light-gray);
+    color: var(--wp--preset--color--white);
+}
+
+.watchlist-container {
+    width: 100%;
+    overflow: hidden;
+    /* Ensures content stays within the screen */
+}
+
+.watch-section {
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+.watch-slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
+    width: max-content;
+    /* Allows the slider to grow with its content */
+}
+
+.watch-article {
+    width: calc(26% - 1rem);
+    /* Each article takes up 25% of the container minus the gap */
+    flex: 0 0 auto;
+    text-align: center;
+}
+
+.watch-article img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.watch-article h3 {
+    font-size: var(--wp--preset--font-size--large);
+    margin-bottom: 0.5rem;
+    font-family: var(--wp--preset--font-family--roboto);
+    line-height: var(--wp--custom--typography--line-height--small);
+    font-weight: 300;
+}
+
+/* Responsive Design for smaller screens */
+@media screen and (max-width: 1024px) {
+    .watch-article {
+        width: calc(33.33% - 1rem);
+        /* Show 3 items at a time on smaller screens */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .watch-article {
+        width: calc(50% - 1rem);
+        /* Show 2 items at a time on even smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .watch-article {
+            width: calc(35% - 1rem);
+        /* Show 1 item at a time on mobile */
+    }
+}
+
+/* Navigation Buttons */
+#prev,
+#next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    z-index: 10;
+}
+
+#prev {
+    left: 0.5rem;
+}
+
+#next {
+    right: 0.5rem;
+}
+
+#prev:disabled,
+#next:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.watch-span h1 {
+    font-family: var(--wp--preset--font-family--roboto-slab);
+    font-size: var(--wp--preset--font-size--medium);
+    font-weight: 300;
+    color: var(--wp--preset--color--bg-dark);
+}
+
+.watch-span p {
+    font-family: var(--wp--preset--font-family--cinzel);
+    font-size: var(--wp--preset--font-size--medium);
+    font-weight: 300;
+    color: var(--wp--preset--color--bg-dark);
+    margin-bottom: 1rem;
+}
+
+.watch-article button {
+    font-family: var(--wp--preset--font-family--roboto);
+    font-size: var(--wp--preset--font-size--extra-small);
+    font-weight: 300;
+    letter-spacing: .2rem;
+    padding: 1rem 2rem;
+    margin-bottom: 2rem;
+    background-color: var(--wp--preset--color--bg-dark);
+    border: solid 1px var(--wp--preset--color--bg-dark);
+    color: var(--wp--preset--color--white);
+}
+
+.watch-shopnew-title-slider {
+    display: flex;
+    align-items: center;
+    min-width: 25%;
+    text-align: center;
+    padding: 2rem;
+    color: var(--wp--preset--color--white);
+    font-family: var(--wp--preset--font-family--roboto);
+}
+
+.watch-shopnew-carousel-container {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    background-color: var(--wp--preset--color--bg-dark);
+
+}
+
+.watch-shopnew-title-slider {
+    display: inline-flex;
+    animation: slide 20s linear infinite;
+}
+
+.watch-shopnew-title-slider h1 {
+    margin: 0;
+    padding: 0 2rem;
+    /* Add spacing between items */
+    display: inline-block;
+    font-size: 2rem;
+    /* Adjust font size */
+    white-space: nowrap;
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.watch-shopnew-arrivals {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5rem;
+    background: url('./WATCHES/banner-04-2048x775.jpg') no-repeat;
+    background-color: var(--wp--preset--color--black);
+    background-size: cover;
+    background-position: center;
+    color: var(--wp--preset--color--white);
+    font-family: var(--wp--preset--font-family--roboto);
+    gap: 2rem;
+    /* Space between the containers */
+}
+
+.watch-shopenew-arriavals-article {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+
+}
+
+.watch-shopenew-arriavals-article h1 {
+    font-size: var(--wp--preset--font-size--x-large);
+    margin-bottom: 1rem;
+}
+
+.watch-shopenew-arriavals-article p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.watch-shopenew-arriavals-article button {
+    padding: 0.75rem 1.5rem;
+    color: white;
+    background: transparent;
+    font-size: 1rem;
+    border: 1px solid var(--wp--preset--color--white);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.watch-shopenew-arriavals-article button:hover {
+    background-color: #e73370;
+}
+
+@media (max-width: 768px) {
+    .watch-shopnew-arrivals {
+        flex-direction: column;
+    }
+
+    .watch-shopenew-arriavals-article {
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+}
+.watch-stylish-container {
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 4rem;
+    background-color: var(--wp--preset--color--white);
+    color: var(--wp--preset--color--bg-dark);
+    font-family: var(--wp--preset--font-family--roboto);
+    gap: 2rem;
+    /* Space between the containers */
+}
+
+.watch-stylish-header img {
+    width: 5rem;
+    height: 5rem;
+    text-align: center;
+    transition: transform 1s ease;
+    /* Smooth transition for scaling */
+}
+
+.watch-stylish-header img:hover {
+    transform: scale(1.1);
+    /* Scale the image slightly on hover */
+}
+
+.watch-stylish-header h1 {
+    font-size: var(--wp--preset--font-size--x-large);
+}
+
+.watch-stylish-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 1rem;
+    color: var(--wp--preset--color--bg-light);
+}
+
+@media screen and (max-width: 1024px) {
+    .watch-stylish-section {
+        flex-wrap: wrap;
+    }
+}
+
+.watch-stylish-article {
+    flex: 1 1 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.watch-stylish-article img {
+    width: 100%;
+    height: clamp(30rem, 45rem, 60rem);
+    object-fit: cover;
+    transition: transform 1s ease;
+    /* Smooth transition for scaling */
+}
+@media screen and (max-width: 768px) {
+.watch-stylish-article img{
+    height: 20rem;
+}
+}
+
+.watch-stylish-article img:hover {
+    transform: scale(1.05);
+    /* Scale the image slightly on hover */
+}
+
+.watch-stylish-articles-section {
+    display: flex;
+    flex-direction: column;
+    /* Arrange children in a column */
+    overflow: hidden;
+}
+
+.watch-stylish-span {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.watch-stylish-article h3 {
+    font-size: var(--wp--preset--font-size--x-large);
+    margin-bottom: 1rem;
+}
+
+.watch-stylish-article button,
+.watch-stylish-span button {
+    padding: 0.75rem 1.5rem;
+    color: white;
+    background: transparent;
+    font-size: 1rem;
+    border: 1px solid var(--wp--preset--color--white);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.watch-stylish-article button:hover,
+.watch-stylish-span button:hover {
+    background-color: var(--wp--preset--color--white);
+    color: var(--wp--preset--color--black);
+}
+
+.ws-stylish-article {
+    position: relative;
+}
+
+.ws-stylish-article img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    transition: transform 1s ease;    /* Smooth transition for scaling */
+}
+
+.ws-stylish-article img:hover {
+    transform: scale(1.05);
+    /* Scale the image slightly on hover */
+}
+
+.watch-topseller-watches {
+    display: flex;
+    /* Allow items to wrap onto the next line */
+    gap:2rem;
+    /* Space between the items */
+    justify-content: space-between;
+    /* Distribute space evenly */
+}
+
+.watch-topseller-span {
+    width: 100%;
+    /* Each item will take up 23% of the container width */
+    padding: 10px;
+    /* Example background color */
+    text-align: center;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.watch-topseller-span img {
+    max-width: 100%;
+    width: 20rem;
+    height: auto;
+    object-fit: cover;
+}
+
+.watch-topseller-span h1 {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.watch-topseller-span p {
+    font-size: 1rem;
+    color: #777;
+}
+
+.watch-topseller-span button {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid var(--wp--preset--color--black);
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 1s ease;
+}
+
+.watch-topseller-span button:hover {
+    border: 2px solid var(--wp--preset--color--black);
+}
