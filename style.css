@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
 :root {
     --wp--preset--color--black: #000000;
     --wp--preset--color--cyan-bluish-gray: #abb8c3;
@@ -18,20 +20,21 @@
     --wp--preset--color--accent-secondary: #D9E9E7;
     --wp--preset--color--bg-dark: #121212;
     --wp--preset--color--bg-light: #f4f4f4;
-  --wp--preset--font-size--small: clamp(0.875rem, 1vw, 0.9rem);
-  --wp--preset--font-size--medium: clamp(0.875rem, 1.2vw, 1.2rem);
-  --wp--preset--font-size--large: clamp(1.25rem, 3vw, 2rem);
-  --wp--preset--font-size--x-large: clamp(1.563rem, 4vw, 2.625rem);
-  --wp--preset--font-size--extra-small: 0.75rem;
-  --wp--preset--font-size--normal: clamp(0.875rem, 1vw, 1rem);
-  --wp--preset--font-size--medium-large: clamp(0.929rem, 1.5vw, 1.4rem);
-  --wp--preset--font-size--extra-large: clamp(1.743rem, 5vw, 3rem);
-  --wp--preset--font-size--huge: clamp(2.2rem, 6vw, 4rem);
-  --wp--preset--font-size--gigantic: clamp(2.629rem, 8vw, 5rem);
-  --wp--preset--font-size--humongous: clamp(3.426rem, 10vw, 7rem);
+    --wp--preset--font-size--x-small: clamp(0.575rem, 1vw, 0.625rem);
+    --wp--preset--font-size--small: clamp(0.875rem, 1vw, 0.9rem);
+    --wp--preset--font-size--medium: clamp(0.875rem, 1.2vw, 1.2rem);
+    --wp--preset--font-size--large: clamp(1.25rem, 3vw, 2rem);
+    --wp--preset--font-size--x-large: clamp(1.563rem, 4vw, 2.625rem);
+    --wp--preset--font-size--extra-small: 0.75rem;
+    --wp--preset--font-size--normal: clamp(0.875rem, 1vw, 1rem);
+    --wp--preset--font-size--medium-large: clamp(0.929rem, 1.5vw, 1.4rem);
+    --wp--preset--font-size--extra-large: clamp(1.743rem, 5vw, 3rem);
+    --wp--preset--font-size--huge: clamp(2.2rem, 6vw, 4rem);
+    --wp--preset--font-size--humongous: clamp(3.426rem, 10vw, 7rem);
+    --wp--preset--font-size--gigantic: clamp(7rem, 10vw, 10rem);
 
-    --wp--preset--font-family--roboto: Roboto, sans-serif;
-    --wp--preset--font-family--roboto-slab: 'Roboto Slab', serif;
+    --wp--preset--font-family--roboto: 'Roboto Slab', serif;
+    --wp--preset--font-family--raleway: 'Raleway', sans-serif;
 
 
 
@@ -62,7 +65,7 @@
 }
 
 body {
-    font-family: var(--wp--preset--font-family--primary);
+    font-family: var(--wp--preset--font-family--raleway);
     line-height: var(--wp--custom--typography--line-height--normal);
     color: var(--wp--preset--color--white);
     margin: 0;
@@ -143,14 +146,14 @@ body {
     display: flex;
     place-content: center space-between;
     padding: .5rem;
-    background-color: #000000b7;
+    background-color: var(--wp--preset--color--black);
 }
 
 .header-section-one h1 {
     display: flex;
     gap: 1rem;
     font-size: var(--wp--preset--font-size--x-small);
-    font-family: var(--wp--preset--font-family--roboto-slab);
+    font-family: var(--wp--preset--font-family--roboto);
 }
 
 .header-section-one h1 a {
@@ -160,7 +163,8 @@ body {
 
 .navbar-container {
     flex-wrap: wrap;
-    padding: 1rem 2rem;
+    padding: 2rem;
+    font-family: var(--wp--preset--font-family--raleway);
 }
 
 .navbar-unorder-list {
@@ -211,37 +215,40 @@ i {
 }
 
 .mso-article {
-    display: block;
-    max-width: var(--wp--style--global--content-size);
-    padding-top: 36px;
-    padding-right: 36px;
-    padding-bottom: 36px;
-    padding-left: 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    font-family: var(--wp--preset--font-family--raleway);
+    padding: 5rem;
+    gap: 1rem;
+
 }
+
 @media screen and (max-width: 768px) {
-  .mso-article {
-    text-align: center;
-  }
+    .mso-article {
+        text-align: center;
+    }
 }
 
 .mso-title {
-    font-family: var(--wp--preset--font-family--roboto-slab);
-    font-size: clamp(7rem, 5vw, 10rem);
-    /* Responsive font size from 1rem to 7rem */
+    font-family: var(--wp--preset--font-family--roboto);
+    font-size: var(--wp--preset--font-size--gigantic);
     line-height: var(--wp--custom--typography--line-height--small);
     font-weight: 300;
     /* Light font weight for a subtle look */
     letter-spacing: .2rem;
     /* Adds space between letters */
+    max-width: 50%;
 }
 
-.mso-article p {
-    font-family: var(--wp--preset--font-family--roboto);
-    font-size: var(--wp--preset--font-size--extra-small);
-    line-height: var(--wp--custom--typography--line-height--large);
-    font-weight: 300;
-    max-width: 100%;
-    letter-spacing: .2rem;
+@media screen and (max-width: 300px) {}
+
+.mso-description {
+    box-sizing: border-box;
+    font-family: var(--wp--preset--font-family--raleway);
+    font-size: var(--wp--preset--font-size--medium);
+
 }
 
 .mso-article button {
@@ -250,11 +257,19 @@ i {
     line-height: var(--wp--custom--typography--line-height--medium);
     font-weight: 300;
     letter-spacing: .2rem;
-    padding: 1rem;
+    padding: 0.8rem;
     background-color: transparent;
     border: solid 1px var(--wp--preset--color--light-gray);
     color: var(--wp--preset--color--white);
 }
+
+
+@media screen and (max-width: 768px) {
+    .mso-article {
+        text-align: center;
+    }
+}
+
 
 .watchlist-container {
     width: 100%;
@@ -315,7 +330,7 @@ i {
 
 @media screen and (max-width: 480px) {
     .watch-article {
-            width: calc(35% - 1rem);
+        width: calc(35% - 1rem);
         /* Show 1 item at a time on mobile */
     }
 }
@@ -327,7 +342,7 @@ i {
     top: 50%;
     transform: translateY(-50%);
     background-color: rgba(0, 0, 0, 0.5);
-    color: white;
+    color: var(--wp--preset--color--white);
     border: none;
     padding: 0.5rem 1rem;
     cursor: pointer;
@@ -349,7 +364,7 @@ i {
 }
 
 .watch-span h1 {
-    font-family: var(--wp--preset--font-family--roboto-slab);
+    font-family: var(--wp--preset--font-family--roboto);
     font-size: var(--wp--preset--font-size--medium);
     font-weight: 300;
     color: var(--wp--preset--color--bg-dark);
@@ -368,21 +383,11 @@ i {
     font-size: var(--wp--preset--font-size--extra-small);
     font-weight: 300;
     letter-spacing: .2rem;
-    padding: 1rem 2rem;
+    padding: 0.8rem 2rem;
     margin-bottom: 2rem;
     background-color: var(--wp--preset--color--bg-dark);
     border: solid 1px var(--wp--preset--color--bg-dark);
     color: var(--wp--preset--color--white);
-}
-
-.watch-shopnew-title-slider {
-    display: flex;
-    align-items: center;
-    min-width: 25%;
-    text-align: center;
-    padding: 2rem;
-    color: var(--wp--preset--color--white);
-    font-family: var(--wp--preset--font-family--roboto);
 }
 
 .watch-shopnew-carousel-container {
@@ -394,8 +399,14 @@ i {
 }
 
 .watch-shopnew-title-slider {
+    align-items: center;
+    min-width: 25%;
+    text-align: center;
+    padding: 2rem;
+    color: var(--wp--preset--color--white);
+    font-family: var(--wp--preset--font-family--raleway);
     display: inline-flex;
-    animation: slide 20s linear infinite;
+    animation: slide 40s linear infinite;
 }
 
 .watch-shopnew-title-slider h1 {
@@ -403,8 +414,9 @@ i {
     padding: 0 2rem;
     /* Add spacing between items */
     display: inline-block;
-    font-size: 2rem;
+    font-size: var(--wp--preset--font-size--x-large);
     /* Adjust font size */
+    font-weight: 300;
     white-space: nowrap;
 }
 
@@ -456,7 +468,7 @@ i {
 
 .watch-shopenew-arriavals-article button {
     padding: 0.75rem 1.5rem;
-    color: white;
+    color: var(--wp--preset--color--white);
     background: transparent;
     font-size: 1rem;
     border: 1px solid var(--wp--preset--color--white);
@@ -479,19 +491,23 @@ i {
         margin-bottom: 1.5rem;
     }
 }
+
 .watch-stylish-container {
-    display: flex;
-    overflow: hidden;
-    flex-direction: column;
-    align-items: center;
+
     text-align: center;
-    justify-content: center;
-    padding: 4rem;
     background-color: var(--wp--preset--color--white);
     color: var(--wp--preset--color--bg-dark);
     font-family: var(--wp--preset--font-family--roboto);
     gap: 2rem;
     /* Space between the containers */
+}
+
+.watch-stylish-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
 }
 
 .watch-stylish-header img {
@@ -508,14 +524,17 @@ i {
 }
 
 .watch-stylish-header h1 {
-    font-size: var(--wp--preset--font-size--x-large);
+    font-size: var(--wp--preset--font-size--huge);
+    font-family: var(--wp--preset--font-family--raleway);
+    font-weight: 300;
 }
 
 .watch-stylish-section {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     column-gap: 1rem;
+    padding: 5rem;
     color: var(--wp--preset--color--bg-light);
 }
 
@@ -526,22 +545,21 @@ i {
 }
 
 .watch-stylish-article {
-    flex: 1 1 100%;
     position: relative;
     overflow: hidden;
 }
 
 .watch-stylish-article img {
-    width: 100%;
-    height: clamp(30rem, 45rem, 60rem);
-    object-fit: cover;
+    max-width: 100%;
+    object-fit: contain;
     transition: transform 1s ease;
     /* Smooth transition for scaling */
 }
+
 @media screen and (max-width: 768px) {
-.watch-stylish-article img{
-    height: 20rem;
-}
+    .watch-stylish-article img {
+        height: 20rem;
+    }
 }
 
 .watch-stylish-article img:hover {
@@ -574,7 +592,7 @@ i {
 .watch-stylish-article button,
 .watch-stylish-span button {
     padding: 0.75rem 1.5rem;
-    color: white;
+    color: var(--wp--preset--color--white);
     background: transparent;
     font-size: 1rem;
     border: 1px solid var(--wp--preset--color--white);
@@ -598,7 +616,8 @@ i {
     height: auto;
     aspect-ratio: 16/9;
     object-fit: cover;
-    transition: transform 1s ease;    /* Smooth transition for scaling */
+    transition: transform 1s ease;
+    /* Smooth transition for scaling */
 }
 
 .ws-stylish-article img:hover {
@@ -606,23 +625,58 @@ i {
     /* Scale the image slightly on hover */
 }
 
-.watch-topseller-watches {
+.watch-topseller-header {
     display: flex;
-    /* Allow items to wrap onto the next line */
-    gap:2rem;
-    /* Space between the items */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.watch-topseller-header p {
+    font-family: var(--wp--preset--font-family--roboto);
+    font-weight: 400;
+    color: var(--wp--preset--color--dark-gray);
+}
+
+.watch-topseller-header h1 {
+    font-size: var(--wp--preset--font-size--huge);
+    font-weight: 300;
+    font-family: var(--wp--preset--font-family--raleway);
+}
+
+.watch-topseller-watches {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
     justify-content: space-between;
-    /* Distribute space evenly */
+    padding: 3rem;
+}
+
+@media (max-width: 768px) {
+    .watch-topseller-watches {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .watch-topseller-watches {
+        grid-template-columns: 1fr;
+    }
 }
 
 .watch-topseller-span {
     width: 100%;
-    /* Each item will take up 23% of the container width */
-    padding: 10px;
-    /* Example background color */
+    position: relative;
     text-align: center;
     border-radius: 8px;
     transition: transform 0.3s ease;
+    background: var(--wp--preset--color--bg-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    /* Ensure consistent sizing */
 }
 
 .watch-topseller-span img {
@@ -633,25 +687,530 @@ i {
 }
 
 .watch-topseller-span h1 {
-    font-size: 1.2rem;
-    color: #333;
+    font-size: var(--wp--preset--font-size--medium);
+    font-weight: 300;
+    color: var(--wp--preset--color--bg-dark);
+    font-family: var(--wp--preset--font-family--raleway);
 }
 
 .watch-topseller-span p {
     font-size: 1rem;
-    color: #777;
+    font-weight: 300;
+    color: var(--wp--preset--color--bg-dark);
 }
 
 .watch-topseller-span button {
     background-color: transparent;
-    color: #fff;
+    color: var(--wp--preset--color--black);
     border: 1px solid var(--wp--preset--color--black);
-    padding: 1rem 2rem;
+    background: var(--wp--preset--color--bg-light);
+    padding: 0.8rem;
+    width: 80%;
+    /* Button stretches to span's width */
+    box-sizing: border-box;
+    /* Ensures padding does not add extra size */
     font-size: 1rem;
+    font-family: var(--wp--preset--font-family--raleway);
     cursor: pointer;
     transition: background-color 1s ease;
+    margin: 1rem;
+    /* Adjust margin for spacing */
 }
 
-.watch-topseller-span button:hover {
+/* Main container that holds both the video and content */
+.watch-video-background-cotainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    height: 70vh;
+    /* Full viewport height */
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Style for the video background */
+.watch-video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+    /* Place video behind content */
+}
+
+/* Ensure the video fills the entire container */
+.watch-video-background video {
+    object-fit: cover;
+    /* Cover the entire area */
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+/* Style the content that will appear on top of the video */
+.watch-video-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    max-width: 35%;
+    gap: 1rem;
+    width: 100%;
+    flex-direction: column;
+    padding: 2rem;
+    margin: 4rem;
+    z-index: 1;
+    color: var(--wp--preset--color--black);
+    background: var(--wp--preset--color--white);
+    /* Ensure the content is above the video */
+}
+
+@media screen and (max-width: 800px) {
+    .watch-video-content {
+        max-width: 100%;
+    }
+}
+
+/* Styling for the heading */
+.watch-video-content h1 {
+    font-size: var(--wp--preset--font-size--huge);
+    font-family: var(--wp--preset--font-family--raleway);
+    font-weight: 100;
+}
+
+/* Styling for the paragraph */
+.watch-video-content p {
+    font-size: var(--wp--preset--font-size--medium);
+    font-family: var(--wp--preset--font-family--raleway);
+}
+
+/* Styling for the button */
+.watch-video-content button {
+    background-color: var(--wp--preset--color--white);
+    color: var(--wp--preset--color--bg-dark);
+    padding: 10px 20px;
+    border: 1px solid var(--wp--preset--color--bg-dark);
+    font-size: var(--wp--preset--font-size--x-small);
+    cursor: pointer;
+}
+
+/* General Styling */
+.product-of-the-week {
+    display: flex;
+    justify-content: center;
+    /* Distributes space evenly */
+    align-items: center;
+    /* Ensures both containers have equal height */
+    gap: 2rem;
+    padding: 5rem;
+    background: var(--wp--preset--color--bg-light);
+    border: 1px solid var(--wp--preset--color--light-gray);
+    border-radius: 8px;
+    color: var(--wp--preset--color--black);
+}
+
+/* Text Container */
+.product-text-container {
+    flex: 1;
+    max-width: 50%;
+    box-sizing: border-box;
+}
+
+.product-text-container p {
+    margin: 0 0 1rem;
+    color: var(--wp--preset--color--dark-gray);
+    font-family: var(--wp--preset--font-family--raleway);
+    font-size: var(--wp--preset--font-size--medium-large);
+}
+
+.product-text-container h1 {
+    margin: 0 0 20px;
+    font-size: var(--wp--preset--font-size--huge);
+    color: var(--wp--preset--color--black);
+    font-weight: 300;
+}
+
+.view-product-link {
+    text-decoration: none;
+    /* Removes default underline */
+    color: inherit;
+    /* Ensures the text color matches the rest of the design */
+    border-bottom: 2px solid var(--wp--preset--color--black);
+    /* Adds a black border below the link */
+    padding-bottom: 4px;
+    /* Adds some spacing between the text and the border */
+    display: inline-flex;
+    /* Aligns the text and icon properly */
+    align-items: center;
+    /* Ensures the icon aligns with the text */
+    gap: 0.5rem;
+    /* Adds space between the text and the icon */
+    transition: all 0.3s ease;
+    /* Smooth transition for hover effects */
+    color: var(--wp--preset--color--accent-primary);
+    /* Optional: Change text color on hover */
+    border-bottom-color: var(--wp--preset--color--accent-primary);
+}
+
+.view-product-link i {
+    transition: transform 0.3s ease;
+    /* Smooth movement for the icon */
+}
+
+.view-product-link:hover i {
+    transform: translateX(5px);
+    /* Moves the icon 5px to the right on hover */
+}
+
+/* Image Container */
+.product-image-container {
+    /* Matches the width of the text container */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border: solid 1px var(--wp--preset--color--black);
+}
+
+.product-image-section {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.product-image-section img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    height: 50%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Product Details */
+.product-details {
+    position: absolute;
+    bottom: .8rem;
+    left: .8rem;
+    color: var(--wp--preset--color--black);
+    /* White text color */
+    padding: .8rem;
+    border-radius: 5px;
+    text-align: left;
+    z-index: 1;
+    /* Ensures it appears above the image */
+}
+
+.product-details p {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.product-details h1 {
+    margin: 5px 0 0;
+    font-size: var(--wp--preset--font-size--medium-large);
+    font-family: var(--wp--preset--font-family--raleway);
+    font-weight: 300;
+}
+
+/* Button Container */
+.product-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    padding: 2rem;
+}
+
+.product-buttons button {
+    width: 100%;
+    padding: .8rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.product-buttons button:first-child {
+    background-color: var(--wp--preset--color--white);
+    color: var(--wp--preset--color--black);
     border: 2px solid var(--wp--preset--color--black);
+    /* Consistent border width */
+    padding: .8rem;
+    box-sizing: border-box;
+    /* Ensure padding and border are included in the width */
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    /* Smooth transition for hover effects */
+    box-shadow: none;
+    /* Default state without shadow */
+}
+
+.product-buttons button:first-child:hover {
+    box-shadow: 0 0 0 1px var(--wp--preset--color--black);
+    /* Inside shadow */
+}
+
+/* View Product Button */
+.product-buttons button:last-child {
+    background-color: var(--wp--preset--color--black);
+    color: var(--wp--preset--color--white);
+    border: none;
+}
+
+.product-buttons button:last-child:hover {
+    background-color: var(--wp--preset--color--white);
+    color: var(--wp--preset--color--black);
+}
+
+.newsletter-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    width: 100%;
+    height: 60vh;
+    padding: 5rem;
+    overflow: hidden;
+    /* Ensure content stays within the container */
+}
+
+/* Blurry background on the image */
+.newsletter-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./WATCHES/banner-07-768x439.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Adds blur to the background image */
+    z-index: -2;
+    /* Places the background behind everything */
+}
+
+/* Overlay to darken the blurred background */
+.newsletter-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    /* Semi-transparent overlay */
+    z-index: -1;
+    /* Places the overlay above the blurred image */
+}
+
+
+.newsletter-article-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.newsletter-article-section h1 {
+    color: var(--wp--preset--color--white);
+    font-size: var(--wp--preset--font-size--huge);
+    line-height: var(--wp--custom--typography--line-height--small);
+    font-weight: 300;
+}
+
+.newsletter-article-section p {
+    color: var(--wp--preset--color--white);
+    font-size: var(--wp--preset--font-size--medium);
+    font-family: var(--wp--preset--font-family--raleway);
+    line-height: var(--wp--custom--typography--line-height--small);
+    font-weight: 300;
+}
+
+/* Styling for sections */
+.newsletter-article-section,
+.newsletter-form-section {
+    flex: 1;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    /* Ensures these sections are above the background and overlay */
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.newsletter-input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.newsletter-input-group input {
+    width: 100%;
+    padding: 1rem;
+    font-weight: 300;
+    font-size: var(--wp--preset--font-size--small);
+    background-color: var(--wp--preset--color--white);
+    border: 1px solid var(--wp--preset--color--cyan-bluish-gray);
+    outline: none;
+    z-index: 1;
+}
+
+.newsletter-label-name {
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    font-size: var(--wp--preset--font-size--small);
+    color: var(--wp--preset--color--black);
+    font-weight: 600;
+    pointer-events: none;
+    transition: all 0.2s ease-in-out;
+    z-index: 0;
+}
+
+
+.newsletter-label-name span {
+    font-size: var(--wp--preset--font-size--x-small);
+    font-weight: 300;
+    color: var(--wp--preset--color--cyan-bluish-gray);
+}
+
+.newsletter-input-group input:focus+label,
+.newsletter-input-group input:valid+label {
+    top: -1px;
+    left: 5px;
+    font-size: 10px;
+    color: var(--wp--preset--color--black);
+}
+
+.newsletter-submit-btn {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    font-size: var(--wp--preset--font-size--x-small);
+    color: #fff;
+    background-color: transparent;
+    border: 1px solid var(--wp--preset--color--white);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.newsletter-submit-btn:hover {
+    background-color: #0056b3;
+}
+
+
+.comparison-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem;
+    gap: 2rem;
+}
+
+.comparison-section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2rem;
+}
+
+.comparison-text {
+    flex: 1;
+    max-width: 40%;
+}
+
+.comparison-text h6 {
+    font-size: var(--wp--preset--font-size--small);
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: var(--wp--preset--color--black);
+    margin-bottom: 1rem;
+}
+
+.comparison-text h2 {
+    font-size: var(--wp--preset--font-size--huge);
+    font-weight: 100;
+    line-height: var(--wp--custom--typography--line-height--small);
+    font-family: var(--wp--preset--font-family--roboto);
+    color: var(--wp--preset--color--black);
+}
+
+.comparison-text p {
+    margin-bottom: 2rem;
+    color: var(--wp--preset--color--medium-gray);
+}
+
+.comparison-text button {
+    padding: 0.75rem 1.5rem;
+    border: 1px solid var(--wp--preset--color--black);
+    background-color: transparent;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.comparison-text button:hover {
+    background-color: var(--wp--preset--color--black);
+    color: var(--wp--preset--color--bg-light);
+}
+
+.comparison-cards {
+    flex: 1;
+    max-width: 100%;
+    padding: 2rem;
+    background: var(--wp--preset--color--bg-light);
+    border: solid 1px var(--wp--preset--color--black);
+}
+
+.comparison-cards-comtainer {
+    color: var(--wp--preset--color--black);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 2rem;
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.product-card span:first-child {
+    padding: 2rem;
+}
+
+.product-card-span:hover {
+    inset: 0;
+    border: solid 1px var(--wp--preset--color--black);
+}
+
+.product-card-span button {
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid var(--wp--preset--color--black);
+    background-color: transparent;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.product-card img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    height: 50%;
+    object-fit: cover;
 }

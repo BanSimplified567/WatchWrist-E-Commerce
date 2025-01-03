@@ -83,3 +83,5 @@ window.addEventListener('resize', () => {
 
 const shopeNewSlider = document.querySelector('.watch-shopnew-title-slider');
 const content = shopeNewSlider.innerHTML;
+
+
