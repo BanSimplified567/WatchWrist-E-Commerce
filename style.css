@@ -1124,7 +1124,6 @@ i {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 2rem;
 }
 
 .comparison-text {
@@ -1146,7 +1145,7 @@ i {
     font-weight: 100;
     line-height: var(--wp--custom--typography--line-height--small);
     font-family: var(--wp--preset--font-family--roboto);
-    color: var(--wp--preset--color--black);
+    color: var(--wp--preset--color--dark-gray);
 }
 
 .comparison-text p {
@@ -1175,24 +1174,46 @@ i {
     border: solid 1px var(--wp--preset--color--black);
 }
 
-.comparison-cards-comtainer {
-    color: var(--wp--preset--color--black);
+.comparison-cards-container {
+    color: var(--wp--preset--color--dark-gray);
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    gap: 2rem;
 }
+
+.comparison-cards-container-span p {
+    width: 100%;
+    /* Ensure the <p> spans the full width of the parent */
+    border-top: 1px solid var(--wp--preset--color--bg-dark);
+    /* Apply border */
+    margin: 0;
+    /* Remove any default margin that could affect layout */
+    padding: 0.5rem 0;
+    /* Add some spacing inside the <p> */
+    text-align: center;
+    /* Center text content if needed */
+    box-sizing: border-box;
+    /* Include padding in width calculation */
+}
+
+.comparison-cards-container-span:nth-child(1) p {
+    font-weight: 600;
+}
+
 
 .product-card {
     display: flex;
     flex-direction: column;
-    align-items: center;
     text-align: center;
+    gap: 2rem;
 }
 
-.product-card span:first-child {
-    padding: 2rem;
+.product-card-span {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 0;
 }
+
 
 .product-card-span:hover {
     inset: 0;
@@ -1202,10 +1223,16 @@ i {
 .product-card-span button {
     width: 100%;
     padding: 0.75rem 1.5rem;
-    border: 1px solid var(--wp--preset--color--black);
-    background-color: transparent;
+    color: var(--wp--preset--color--white);
+    background-color: var(--wp--preset--color--black);
     cursor: pointer;
     transition: 0.3s;
+}
+
+.product-card-span button:hover {
+    border: solid .5px var(--wp--preset--color--black);
+    color: var(--wp--preset--color--black);
+    background-color: var(--wp--preset--color--white);
 }
 
 .product-card img {
