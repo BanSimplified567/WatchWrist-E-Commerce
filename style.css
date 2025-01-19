@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@40   0;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@400;700&display=swap');
 
 :root {
     --wp--preset--color--black: #000000;
@@ -34,7 +36,8 @@
     --wp--preset--font-size--gigantic: clamp(7rem, 10vw, 10rem);
 
     --wp--preset--font-family--roboto: 'Roboto Slab', serif;
-    --wp--preset--font-family--raleway: 'Raleway', sans-serif;
+    --wp--preset--font-family--roboto-serif: 'Roboto Serif',
+        serif --wp--preset--font-family--raleway: 'Raleway', sans-serif;
 
 
 
@@ -232,7 +235,7 @@ i {
 }
 
 .mso-title {
-    font-family: var(--wp--preset--font-family--roboto);
+    font-family: var(--wp--preset--font-family--raleway);
     font-size: var(--wp--preset--font-size--gigantic);
     line-height: var(--wp--custom--typography--line-height--small);
     font-weight: 300;
@@ -457,8 +460,10 @@ i {
 }
 
 .watch-shopenew-arriavals-article h1 {
-    font-size: var(--wp--preset--font-size--x-large);
-    margin-bottom: 1rem;
+    font-family: var(--wp--preset--font-family--raleway);
+    font-size: var(--wp--preset--font-size--huge);
+font-weight: 300;
+
 }
 
 .watch-shopenew-arriavals-article p {
@@ -472,15 +477,14 @@ i {
     background: transparent;
     font-size: 1rem;
     border: 1px solid var(--wp--preset--color--white);
-    border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .watch-shopenew-arriavals-article button:hover {
-    background-color: #e73370;
+    background-color: var(--wp--preset--color--white);
+    color: var(--wp--preset--color--black);
 }
-
 @media (max-width: 768px) {
     .watch-shopnew-arrivals {
         flex-direction: column;
@@ -1373,20 +1377,155 @@ i {
 .featured-the-blog-about-us-section {
     display: flex;
     flex-direction: column;
+    gap: 1rem;
     justify-content: center;
     align-items: center;
     text-align: center;
     height: 100vh;
 }
-.featured-the-blog-about-us-section h1{
+
+.featured-the-blog-about-us-section h3 {
+    font-size: var(--wp--preset--font-size--small);
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.featured-the-blog-about-us-section h1 {
     font-size: var(--wp--preset--font-size--huge);
     font-family: var(--wp--preset--font-family--roboto);
     font-weight: 100;
-    line-height: var(--wp--custom--typography--line-height--small);
     letter-spacing: 0.5px;
 }
 
-.featured-the-blog-about-us-section p{
+.featured-the-blog-about-us-section p {
     max-width: 50%;
-    
+    font-size: var(--wp--preset--font-size--medium);
+
+}
+
+.featured-the-blog-about-us-section button {
+    padding: 1rem 2rem;
+    outline: none;
+    border: 2px solid var(--wp--preset--color--white);
+    cursor: pointer;
+    font-size: var(--wp--preset--font-size--small);
+    font-weight: 500;
+    background-color: transparent;
+    color: var(--wp--preset--color--bg-light);
+    font-family: var(--wp--preset--font-family--raleway);
+    margin: 1rem;
+}
+
+.service-section {
+    flex: 1;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 8px;
+    /* Optional rounded corners */
+}
+
+.service-section img {
+    width: 2rem;
+    object-fit: contain;
+}
+
+.service-section h1 {
+    font-size: var(--wp--preset--font-size--medium);
+    font-weight: 200;
+    color: var(--wp--preset--color--black);
+}
+
+.service-section p {
+    font-size: var(--wp--preset--font-size--small);
+    /* Adjust font size of paragraph */
+    color: var(--wp--preset--color--medium-gray);
+    /* Optional color for the paragraph */
+}
+
+
+
+
+.testimonials-container {
+    background-color: var(--wp--preset--color--bg-dark);
+    color: var(--wp--preset--color--bg-light);
+}
+
+.testimony-carousel-container {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+
+}
+
+.testimony-container {
+    text-align: center;
+    padding: 1rem;
+}
+
+.testimony-container h3 {
+    font-size: var(--wp--preset--font-size--small);
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.testimony-container h1 {
+    font-size: var(--wp--preset--font-size--huge);
+    font-family: var(--wp--preset--font-family--roboto);
+    font-weight: 100;
+    letter-spacing: 0.5px;
+}
+
+.testimony-section {
+    display: flex;
+    flex: 0 0 100%;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.testimony-span {
+    flex: 1;
+    max-width: 50%;
+}
+
+.testimony-section img {
+    width: 10rem;
+    object-fit: cover;
+}
+
+.testimony-section p {
+    font-size: var(--wp--preset--font-size--small);
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    z-index: 10;
+}
+
+
+.prev-btn {
+    left: 10rem;
+}
+
+.next-btn {
+    right: 10rem;
 }

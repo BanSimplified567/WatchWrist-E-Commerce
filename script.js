@@ -1,6 +1,22 @@
 // Set the target date and time
 const targetDate = new Date('2025-12-24T23:59:59').getTime();
 
+const slider = document.querySelector('.watch-slider');
+const articles = document.querySelectorAll('.watch-article');
+const prevBtn = document.getElementById('prev');
+const nextBtn = document.getElementById('next');
+
+let currentIndex = 0;
+
+const shopeNewSlider = document.querySelector('.watch-shopnew-title-slider');
+const content = shopeNewSlider.innerHTML;
+
+const carousel = document.querySelector('.carousel');
+const carouselprevBtn = document.querySelector('.prev-btn');
+const carouselnextBtn = document.querySelector('.next-btn');
+const sections = document.querySelectorAll('.testimony-section');
+const sectionCount = sections.length;
+
 // Update the countdown every second
 const countdownInterval = setInterval(() => {
    const now = new Date().getTime();
@@ -24,13 +40,6 @@ const countdownInterval = setInterval(() => {
       document.getElementById('message').innerText = 'Happy New Year!';
    }
 }, 1000);
-
-const slider = document.querySelector('.watch-slider');
-const articles = document.querySelectorAll('.watch-article');
-const prevBtn = document.getElementById('prev');
-const nextBtn = document.getElementById('next');
-
-let currentIndex = 0;
 
 const getVisibleItemsCount = () => {
    // Calculate the number of visible items based on the screen width
@@ -81,7 +90,16 @@ window.addEventListener('resize', () => {
    slideTo(currentIndex);
 });
 
-const shopeNewSlider = document.querySelector('.watch-shopnew-title-slider');
-const content = shopeNewSlider.innerHTML;
+const updateCarousel = () => {
+   carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+};
 
+carouselprevBtn.addEventListener('click', () => {
+   currentIndex = currentIndex === 0 ? sectionCount - 1 : currentIndex - 1;
+   updateCarousel();
+});
 
+carouselnextBtn.addEventListener('click', () => {
+   currentIndex = currentIndex === sectionCount - 1 ? 0 : currentIndex + 1;
+   updateCarousel();
+});
