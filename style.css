@@ -1,6 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@40   0;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josy&display=swap');
 
 :root {
     --wp--preset--color--black: #000000;
@@ -36,8 +37,9 @@
     --wp--preset--font-size--gigantic: clamp(7rem, 10vw, 10rem);
 
     --wp--preset--font-family--roboto: 'Roboto Slab', serif;
-    --wp--preset--font-family--roboto-serif: 'Roboto Serif',
-        serif --wp--preset--font-family--raleway: 'Raleway', sans-serif;
+    --wp--preset--font-family--roboto-serif: 'Roboto Serif', serif;
+    --wp--preset--font-family--raleway: 'Raleway', sans-serif;
+    --wp--preset--font-family--jost: 'Josy', sans-serif;
 
 
 
@@ -148,7 +150,7 @@ body {
 .header-section-one {
     display: flex;
     place-content: center space-between;
-    padding: .5rem;
+    padding: 1rem;
     background-color: var(--wp--preset--color--black);
 }
 
@@ -191,7 +193,12 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
+    flex: 1;
     list-style: none;
+}
+
+.navbar-home-link {
+    flex: 1;
 }
 
 .navbar-list-icons {
@@ -219,6 +226,7 @@ i {
 
 .mso-article {
     display: flex;
+    flex: 1;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
@@ -231,26 +239,28 @@ i {
 @media screen and (max-width: 768px) {
     .mso-article {
         text-align: center;
+        align-items: center;
     }
 }
 
 .mso-title {
-    font-family: var(--wp--preset--font-family--raleway);
-    font-size: var(--wp--preset--font-size--gigantic);
+    font-family: var(--wp--preset--font-family--roboto-serif);
+    font-size: var(--wp--preset--font-size--humongous);
     line-height: var(--wp--custom--typography--line-height--small);
-    font-weight: 300;
-    /* Light font weight for a subtle look */
-    letter-spacing: .2rem;
-    /* Adds space between letters */
-    max-width: 50%;
+    font-weight: 100;
 }
-
-@media screen and (max-width: 300px) {}
 
 .mso-description {
     box-sizing: border-box;
     font-family: var(--wp--preset--font-family--raleway);
     font-size: var(--wp--preset--font-size--medium);
+    max-width: 50%;
+}
+
+@media screen and (max-width: 781px) {
+    .mso-description {
+        max-width: 100%;
+    }
 
 }
 
@@ -295,10 +305,32 @@ i {
 }
 
 .watch-article {
-    width: calc(26% - 1rem);
+    width: 25%;
     /* Each article takes up 25% of the container minus the gap */
     flex: 0 0 auto;
     text-align: center;
+}
+
+/* Responsive Design for smaller screens */
+@media screen and (max-width: 1024px) {
+    .watch-article {
+        width: 33.33%;
+        /* Show 3 items at a time on smaller screens */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .watch-article {
+        width: 50%;
+        /* Show 2 items at a time on even smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .watch-article {
+        width: 2%;
+        /* Show 1 item at a time on mobile */
+    }
 }
 
 .watch-article img {
@@ -316,27 +348,6 @@ i {
     font-weight: 300;
 }
 
-/* Responsive Design for smaller screens */
-@media screen and (max-width: 1024px) {
-    .watch-article {
-        width: calc(33.33% - 1rem);
-        /* Show 3 items at a time on smaller screens */
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .watch-article {
-        width: calc(50% - 1rem);
-        /* Show 2 items at a time on even smaller screens */
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .watch-article {
-        width: calc(35% - 1rem);
-        /* Show 1 item at a time on mobile */
-    }
-}
 
 /* Navigation Buttons */
 #prev,
@@ -462,7 +473,7 @@ i {
 .watch-shopenew-arriavals-article h1 {
     font-family: var(--wp--preset--font-family--raleway);
     font-size: var(--wp--preset--font-size--huge);
-font-weight: 300;
+    font-weight: 300;
 
 }
 
@@ -485,6 +496,7 @@ font-weight: 300;
     background-color: var(--wp--preset--color--white);
     color: var(--wp--preset--color--black);
 }
+
 @media (max-width: 768px) {
     .watch-shopnew-arrivals {
         flex-direction: column;
@@ -548,34 +560,28 @@ font-weight: 300;
     }
 }
 
+@media screen and (max-width: 768px) {
+    .watch-stylish-section {
+        padding: 1rem
+    }
+}
+
 .watch-stylish-article {
     position: relative;
     overflow: hidden;
 }
 
 .watch-stylish-article img {
+    width: 100;
     max-width: 100%;
     object-fit: contain;
     transition: transform 1s ease;
     /* Smooth transition for scaling */
 }
 
-@media screen and (max-width: 768px) {
-    .watch-stylish-article img {
-        height: 20rem;
-    }
-}
-
 .watch-stylish-article img:hover {
     transform: scale(1.05);
     /* Scale the image slightly on hover */
-}
-
-.watch-stylish-articles-section {
-    display: flex;
-    flex-direction: column;
-    /* Arrange children in a column */
-    overflow: hidden;
 }
 
 .watch-stylish-span {
@@ -617,15 +623,15 @@ font-weight: 300;
 
 .ws-stylish-article img {
     width: 100%;
-    height: auto;
     aspect-ratio: 16/9;
     object-fit: cover;
+    overflow: hidden;
     transition: transform 1s ease;
     /* Smooth transition for scaling */
 }
 
 .ws-stylish-article img:hover {
-    transform: scale(1.05);
+    transform: scale(1.01);
     /* Scale the image slightly on hover */
 }
 
@@ -805,15 +811,21 @@ font-weight: 300;
 .product-of-the-week {
     display: flex;
     justify-content: center;
-    /* Distributes space evenly */
     align-items: center;
-    /* Ensures both containers have equal height */
     gap: 2rem;
     padding: 5rem;
     background: var(--wp--preset--color--bg-light);
     border: 1px solid var(--wp--preset--color--light-gray);
     border-radius: 8px;
     color: var(--wp--preset--color--black);
+}
+
+@media screen and (max-width: 768px) {
+    .product-of-the-week {
+        text-align: center;
+        flex-wrap: wrap;
+        padding: 1rem;
+    }
 }
 
 /* Text Container */
@@ -984,6 +996,19 @@ font-weight: 300;
     /* Ensure content stays within the container */
 }
 
+@media screen and (max-width: 768px) {
+    .newsletter-container {
+        display: block;
+        height: 100%;
+        padding: 2rem;
+        column-gap: 1rem;
+    }
+
+    .newsletter-article-section {
+        margin-bottom: 1rem;
+    }
+}
+
 /* Blurry background on the image */
 .newsletter-container::before {
     content: "";
@@ -1118,21 +1143,36 @@ font-weight: 300;
 
 .comparison-container {
     display: flex;
+    flex: 1;
     justify-content: space-between;
     align-items: center;
     padding: 4rem;
     gap: 2rem;
 }
 
+
 .comparison-section {
     display: flex;
+    flex: 1;
     align-items: center;
     justify-content: center;
 }
 
+@media screen and (max-width: 500px) {
+    .comparison-section {
+        flex-wrap: wrap;
+    }
+}
+
 .comparison-text {
     flex: 1;
-    max-width: 40%;
+}
+
+@media screen and (max-width: 768px) {
+    .comparison-text {
+        text-align: center;
+        max-width: 100%;
+    }
 }
 
 .comparison-text h6 {
@@ -1171,11 +1211,16 @@ font-weight: 300;
 }
 
 .comparison-cards {
-    flex: 1;
+    flex: 2;
     max-width: 100%;
-    padding: 2rem;
     background: var(--wp--preset--color--bg-light);
     border: solid 1px var(--wp--preset--color--black);
+}
+
+@media screen and (max-width: 800px) {
+    .comparison-container {
+        flex-wrap: wrap;
+    }
 }
 
 .comparison-cards-container {
@@ -1183,21 +1228,20 @@ font-weight: 300;
     display: flex;
     justify-content: center;
     align-items: flex-end;
+    padding: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    .comparison-cards-container {
+        display: block;
+    }
 }
 
 .comparison-cards-container-span p {
-    width: 100%;
-    /* Ensure the <p> spans the full width of the parent */
     border-top: 1px solid var(--wp--preset--color--bg-dark);
-    /* Apply border */
-    margin: 0;
-    /* Remove any default margin that could affect layout */
     padding: 0.5rem 0;
-    /* Add some spacing inside the <p> */
     text-align: center;
-    /* Center text content if needed */
     box-sizing: border-box;
-    /* Include padding in width calculation */
 }
 
 .comparison-cards-container-span:nth-child(1) p {
@@ -1235,7 +1279,6 @@ font-weight: 300;
 .product-card img {
     width: 100%;
     aspect-ratio: 1/1;
-    height: 50%;
     object-fit: cover;
 }
 
@@ -1280,16 +1323,14 @@ font-weight: 300;
     gap: 2rem;
 }
 
+@media screen and (max-width: 1024px) {
+    .latest-news-section-article {
+        flex-wrap: wrap;
+    }
+}
+
 .latest-news-article {
-    flex: 1 1 20rem;
-    /* Allow articles to grow/shrink evenly and maintain a base width of 20rem */
-    display: flex;
-    flex-direction: column;
-    /* Stack content vertically */
-    justify-content: space-between;
-    /* Space out content inside the article */
     max-width: 27rem;
-    /* Set a max width for consistency */
     border: 1px solid black;
     /* Optional: Add a border for clarity */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -1299,6 +1340,7 @@ font-weight: 300;
 
 .latest-news-article img {
     aspect-ratio: 16/9;
+    width: 100%;
     object-fit: cover;
 }
 
@@ -1442,9 +1484,6 @@ font-weight: 300;
     /* Optional color for the paragraph */
 }
 
-
-
-
 .testimonials-container {
     background-color: var(--wp--preset--color--bg-dark);
     color: var(--wp--preset--color--bg-light);
@@ -1454,8 +1493,8 @@ font-weight: 300;
     display: flex;
     position: relative;
     overflow: hidden;
+    margin: 2rem;
     max-width: 100%;
-
 }
 
 .testimony-container {
@@ -1479,22 +1518,45 @@ font-weight: 300;
 .testimony-section {
     display: flex;
     flex: 0 0 100%;
-    gap: 1rem;
+    gap: 2rem;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
     padding: 1rem;
     box-sizing: border-box;
 }
 
-.testimony-span {
-    flex: 1;
-    max-width: 50%;
+@media screen and (max-width: 1024px) {
+    .testimony-section {
+        flex-direction: column;
+    }
 }
+
+.testimony-span {
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+    gap: 1em;
+}
+
+
+
+.testimony-span a {
+    font-style: italic;
+    text-decoration: none;
+    color: var(--wp--preset--color--cyan-bluish-gray);
+    font-family: var(--wp--preset--font-family--roboto-serif);
+}
+
+
 
 .testimony-section img {
     width: 10rem;
+    border: 1px solid var(--wp--preset--color--bg-light);
     object-fit: cover;
+}
+
+.testimony-stars {
+    color: var(--wp--preset--color--accent-primary);
 }
 
 .testimony-section p {
@@ -1521,11 +1583,168 @@ font-weight: 300;
     z-index: 10;
 }
 
-
 .prev-btn {
-    left: 10rem;
+    left: 5rem;
 }
 
 .next-btn {
-    right: 10rem;
+    right: 5rem;
+}
+
+@media screen and (max-width: 650px) {
+    .prev-btn {
+        left: 1rem;
+    }
+
+    .next-btn {
+        right: 1rem;
+    }
+}
+
+/* styles.css */
+.footer {
+    width: 100%;
+    background-color: var(--wp--preset--color--black);
+
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 1rem;
+    border-bottom: 1px solid var(--wp--preset--color--accent-primary);
+}
+
+
+.footer-item-four,
+.footer-item {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex: 1;
+    margin: 1rem;
+    min-width: 10rem;
+}
+
+.footer-item h3 {
+    font-size: var(--wp--preset--font-size--normal);
+    font-family: var(--wp--preset--font-family--jost);
+    font-weight: 100;
+}
+
+.footer-item ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-item a {
+    text-decoration: none;
+    font-family: var(--wp--preset--font-family--raleway);
+    color: var(--wp--preset--color--accent-primary);
+    border-bottom: solid 1px var(--wp--preset--color--accent-primary);
+}
+
+
+.footer-item ul li {
+    margin-bottom: 5px;
+}
+
+.footer-item-four,
+.footer-item p {
+    font-family: var(--wp--preset--font-family--raleway);
+    color: var(--wp--preset--color--bg-light);
+    font-size: var(--wp--preset--font-size--small);
+}
+
+.footer-item-four {
+    flex: 2;
+    margin: 1rem;
+}
+
+.footer-button {
+    background-color: transparent;
+    border: solid 1px var(--wp--preset--color--accent-primary);
+    color: var(--wp--preset--color--accent-primary);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: var(--wp--preset--font-size--normal);
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.footer-copyright {
+    display: flex;
+    justify-content: space-between;
+    /* Ensures proper spacing between elements */
+    align-items: center;
+    /* Vertically centers items */
+    padding: 1rem;
+    background-color: var(--wp--preset--color--black);
+    /* Background color */
+    color: var(--wp--preset--color--bg-light);
+    /* Text color */
+    flex-wrap: wrap;
+    /* Allows wrapping on smaller screens */
+    gap: 1rem;
+    /* Adds spacing between elements */
+}
+
+.footer-copyright-span {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+}
+
+.footer-copyright span {
+    display: flex;
+    flex: 1;
+}
+
+.footer-copyright p {
+    margin: 0;
+    /* Removes default margin from <p> tags */
+    font-size: var(--wp--preset--font-size--normal);
+    /* Adjust font size */
+}
+
+.footer-copyright button {
+    flex: 1;
+    background-color: transparent;
+    /* Transparent button background */
+    border: none;
+    /* Removes default button borders */
+    color: var(--wp--preset--color--accent-primary);
+    /* Icon color */
+    font-size: var(--wp--preset--font-size--medium-large);
+    /* Adjust icon size */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+}
+
+.footer-copyright button:hover {
+    color: var(--wp--preset--color--accent-secondary);
+    /* Change color on hover */
+}
+
+.footer-copyright i {
+    font-size: var(--wp--preset--font-size--medium-large);
+    /* Adjust icon size */
+}
+
+@media (max-width: 768px) {
+    .footer-copyright {
+        flex-direction: column;
+        /* Stacks items vertically on smaller screens */
+        text-align: center;
+        /* Center-aligns text */
+    }
+
+    .footer-copyright span {
+        justify-content: center;
+        /* Centers span items */
+    }
 }
