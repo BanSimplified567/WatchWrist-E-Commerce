@@ -17,6 +17,19 @@ const carouselnextBtn = document.querySelector('.next-btn');
 const sections = document.querySelectorAll('.testimony-section');
 const sectionCount = sections.length;
 
+
+window.onscroll = function () {
+   const navbar = document.getElementById('navbarContainer');
+   if (window.pageYOffset > 100) {
+      // Adjust this value to when you want the navbar to stick
+      navbar.classList.add('sticky');
+   } else {
+      navbar.classList.remove('sticky');
+   }
+};
+
+
+
 // Update the countdown every second
 const countdownInterval = setInterval(() => {
    const now = new Date().getTime();

@@ -145,6 +145,8 @@ body {
     position: sticky;
     top: 0;
     z-index: 100;
+    transition: all 0.3s ease-in-out;
+    /* Added smooth transition for the sticky effect */
 }
 
 .header-section-one {
@@ -170,6 +172,26 @@ body {
     flex-wrap: wrap;
     padding: 2rem;
     font-family: var(--wp--preset--font-family--raleway);
+    transition: top 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* Change color to black for navbar links when sticky */
+.navbar-container.sticky .navbar-list a,
+.navbar-container.sticky .navbar-home-link {
+    color: black;
+    /* Make the navbar links and home link color black when sticky */
+}
+
+/* Sticky Navbar Animation Effect */
+.navbar-container.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Add shadow when sticky */
+    background-color: var(--wp--preset--color--white);
+    color: var(--wp--preset--color--black);
+    /* Keep background color consistent */
 }
 
 .navbar-unorder-list {
